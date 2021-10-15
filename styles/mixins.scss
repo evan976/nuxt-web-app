@@ -1,0 +1,105 @@
+/*
+ * mixins
+ */
+
+// 清除浮动
+@mixin clearfix() {
+  &::before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+};
+
+// 行高
+@mixin line-height($height: 12) {
+  line-height: (0.125 * $height) + rem;
+};
+
+// 圆角
+@mixin radius($size: 2px) {
+  border-radius: $size;
+}
+
+// 边框
+@mixin border($size: 1px, $type: solid, $color: #ccc) {
+  border: $size $type $color;
+}
+
+// 阴影
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+
+// 透明度
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// 溢出省略
+@mixin ellipsis($rowCount: 1) {
+  @if $rowCount <= 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $rowCount;
+    -webkit-box-orient: vertical;
+  }
+}
+
+// loading
+@mixin loading($width: 1em) {
+  display: inline-block;
+  height: $width;
+  width: $width;
+  border-radius: $width;
+  border-style: solid;
+  border-width: $width/10;
+  border-color: transparent currentColor transparent transparent;
+  animation: rotate 0.6s linear infinite;
+  vertical-align: middle;
+}
+
+// flex 布局
+@mixin flex($spindle: center, $lateral: center){
+	display: flex;
+	justify-content: $spindle;
+	align-items: $lateral;
+}
+
+// 动画
+@mixin keyframes($animationName) {
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+// 响应式断点
+@mixin breakpoint($point) {
+  @if $point==large {
+    @media (min-width: 64.375em) {
+      @content;
+    }
+  }
+  @else if $point == medium {
+    @media (min-width: 50em) {
+      @content;
+    }
+  }
+  @else if $point == small {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  }
+}
+

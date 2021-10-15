@@ -1,0 +1,47 @@
+
+// colors
+$colors: (
+  'blue': #0081ff,
+  'orange': #f37b1d,
+  'yellow': #fbbd08,
+  'red': #E54D42,
+  'olive': #8DC63F,
+  'green': #39B54A,
+  'cyan': #1CBBB4,
+  'purple': #6739B7,
+  'grey': #8799A3,
+  'gray': #F0F0F0,
+  'black': #333333,
+  'white': #ffffff
+);
+
+$border-color: map-get($colors, 'grey');
+
+$font-sizes: (
+  sm: 12px,
+  md: 14px,
+  lg: 16px,
+  xl: 18px
+);
+
+$spacing-types: (m: margin, p: padding);
+$spacing-directions: (t: top, r: right, b: bottom, l: left);
+$spacing-sizes: (
+  xs: 5px,
+  s: 10px,
+  sm: 15px,
+  md: 20px,
+  lg: 25px,
+  xl: 30px
+);
+
+// color bg-color
+@each $colorKey, $color in $colors {
+  .text-#{$colorKey} {
+    color: $color;
+  }
+  .bg-#{$colorKey} {
+    background-color: $color;
+  }
+};
+
