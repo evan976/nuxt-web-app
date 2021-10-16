@@ -1,12 +1,12 @@
 <template>
-  <div class="category-container text-purple">
-    category-container
+  <div class="tag-container">
+    tag
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'TagPage'
 }
 </script>
 

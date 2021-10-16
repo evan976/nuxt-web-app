@@ -1,18 +1,25 @@
 <template>
   <div class="main-right">
-    <div class="search-container bg-white">
-      <Search />
-    </div>
+    <Search />
+    <HotArticle />
+    <Advertising />
+    <TagList />
   </div>
 </template>
 
 <script>
 import Search from '@/components/Search'
+import HotArticle from '@/components/HotArticle'
+import Advertising from '@/components/Advertising'
+import TagList from '@/components/TagList'
 
 export default {
   name: 'MainRight',
   components: {
-    Search
+    Search,
+    HotArticle,
+    Advertising,
+    TagList
   }
 }
 </script>

@@ -1,12 +1,12 @@
 <template>
-  <div class="tag-container">
-    tag
+  <div class="search-container">
+    search
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'SearchPage'
 }
 </script>
 

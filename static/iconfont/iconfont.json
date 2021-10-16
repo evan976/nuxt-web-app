@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1302809",
+      "name": "关于我们",
+      "font_class": "about",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "11983543",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "ea0b",
+      "unicode_decimal": 59915
+    },
+    {
       "icon_id": "5929340",
       "name": "home1",
       "font_class": "home",
@@ -102,13 +116,6 @@
       "font_class": "database",
       "unicode": "e626",
       "unicode_decimal": 58918
-    },
-    {
-      "icon_id": "3506933",
-      "name": "github",
-      "font_class": "github",
-      "unicode": "e600",
-      "unicode_decimal": 58880
     },
     {
       "icon_id": "3970853",

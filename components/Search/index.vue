@@ -1,11 +1,9 @@
 <template>
-  <div class="search-wrapper p-s">
-    <div class="search-box">
-      <input class="search-input px-s" type="text" placeholder="搜索">
-      <button class="search-btn">
-        <i class="iconfont icon-search" />
-      </button>
-    </div>
+  <div class="search-wrapper bg-white mb-s py-s">
+    <input class="search-input px-s" type="text" placeholder="搜索">
+    <button class="search-btn">
+      <i class="iconfont icon-search" />
+    </button>
   </div>
 </template>
 
@@ -16,8 +14,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.search-box {
+.search-wrapper {
   @include flex(center, center);
+  @include radius;
   .search-input {
     width: 190px;
     height: 30px;

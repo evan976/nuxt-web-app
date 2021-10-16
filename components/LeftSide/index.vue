@@ -5,13 +5,41 @@
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-home" />
         </svg>
-        <span>首页</span>
+        <span>Home</span>
       </nuxt-link>
-      <nuxt-link class="m-s px-s menu-item" to="/category/2">
+      <nuxt-link class="m-s px-s menu-item" to="/category/vue">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-vue" />
         </svg>
-        <span>分类</span>
+        <span>Vue</span>
+        <i class="iconfont icon-right" />
+      </nuxt-link>
+      <nuxt-link class="m-s px-s menu-item" to="/category/react">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-react" />
+        </svg>
+        <span>React</span>
+        <i class="iconfont icon-right" />
+      </nuxt-link>
+      <nuxt-link class="m-s px-s menu-item" to="/category/node">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-nodejs" />
+        </svg>
+        <span>Node</span>
+        <i class="iconfont icon-right" />
+      </nuxt-link>
+      <a class="m-s px-s menu-item" target="_blank" href="https://github.com/wujihua118">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-github" />
+        </svg>
+        <span>GitHub</span>
+        <i class="iconfont icon-right" />
+      </a>
+      <nuxt-link class="m-s px-s menu-item" to="/about">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-about" />
+        </svg>
+        <span>About</span>
         <i class="iconfont icon-right" />
       </nuxt-link>
     </div>
