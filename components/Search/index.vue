@@ -20,6 +20,8 @@ export default {
   .search-input {
     width: 190px;
     height: 30px;
+    font-size: 14px;
+    color: map-get($colors, 'dark');
     background-color: map-get($colors, 'gray');
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;

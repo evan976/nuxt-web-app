@@ -8,7 +8,7 @@
       <ul class="list">
         <nuxt-link to="/tag/code" class="tag-item px-s bg-gray">
           <i class="iconfont icon-react text-dark" />
-          <span class="name text-dark">vue</span>
+          <span class="name text-dark">哈哈</span>
         </nuxt-link>
         <nuxt-link to="/tag/vue" class="tag-item px-s bg-gray">
           <i class="iconfont icon-react text-dark" />
@@ -66,7 +66,8 @@ export default {
         color: map-get($colors, 'white');
       }
       .name {
-        vertical-align: 1px;
+        font-size: 14px;
+        vertical-align: 2px;
       }
     }
   }

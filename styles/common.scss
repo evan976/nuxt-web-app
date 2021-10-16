@@ -43,6 +43,10 @@
   }
 }
 
+input::placeholder {
+  font-size: 14px;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
