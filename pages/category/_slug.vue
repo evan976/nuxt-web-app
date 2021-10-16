@@ -1,15 +1,23 @@
 <template>
-  <div class="category-container text-purple">
-    category-container
+  <div class="category-page">
+    <Thumb />
+    <ArticleList />
   </div>
 </template>
 
 <script>
+import Thumb from '@/components/Thumb'
+import ArticleList from '@/components/ArticleList'
+
 export default {
-  name: 'CategoryPage'
+  name: 'CategoryPage',
+  components: {
+    Thumb,
+    ArticleList
+  }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

@@ -18,6 +18,10 @@ export default {
 
 <style lang="scss" scoped>
 .layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  opacity: .8;
   height: 60px;
   @include box-shadow(0px 1px 4px rgba(255, 255, 255, .2));
   @include clearfix;

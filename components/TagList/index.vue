@@ -1,15 +1,35 @@
 <template>
-  <div class="tag-list bg-white">
+  <div class="tag-list bg-white mb-s">
     <div class="tag-header px-s">
       <i class="iconfont icon-tags text-dark" />
       <span class="title text-dark">标签</span>
     </div>
     <div class="tag-body p-s">
       <ul class="list">
-        <li class="tag-item px-s bg-gray">
+        <nuxt-link to="/tag/code" class="tag-item px-s bg-gray">
+          <i class="iconfont icon-react text-dark" />
+          <span class="name text-dark">vue</span>
+        </nuxt-link>
+        <nuxt-link to="/tag/vue" class="tag-item px-s bg-gray">
           <i class="iconfont icon-react text-dark" />
           <span class="name text-dark">react</span>
-        </li>
+        </nuxt-link>
+        <nuxt-link to="/tag/react" class="tag-item px-s bg-gray">
+          <i class="iconfont icon-react text-dark" />
+          <span class="name text-dark">react</span>
+        </nuxt-link>
+        <nuxt-link to="/tag/node" class="tag-item px-s bg-gray">
+          <i class="iconfont icon-react text-dark" />
+          <span class="name text-dark">react</span>
+        </nuxt-link>
+        <nuxt-link to="/tag/css" class="tag-item px-s bg-gray">
+          <i class="iconfont icon-react text-dark" />
+          <span class="name text-dark">react</span>
+        </nuxt-link>
+        <nuxt-link to="/tag/html" class="tag-item px-s bg-gray">
+          <i class="iconfont icon-react text-dark" />
+          <span class="name text-dark">react</span>
+        </nuxt-link>
       </ul>
     </div>
   </div>
@@ -24,27 +44,30 @@ export default {
 <style lang="scss" scoped>
 .tag-list {
   @include radius;
-  width: 100%;
-  height: 300px;
   .tag-header {
     height: 40px;
     line-height: 40px;
     border-bottom: 1px solid map-get($colors, 'gray');
     font-size: 14px;
   }
-  .tag-item {
-    display: inline-block;
-    @include radius(1px);
-    cursor: pointer;
-    transition: all .2s;
-    &:hover {
-      background-color: map-get($colors, 'olive');
-    }
-    &:hover .name, &:hover i {
-       color: map-get($colors, 'white');
-    }
-    .name {
-      vertical-align: 1px;
+  .tag-body {
+    height: 300px;
+    overflow: scroll;
+    .tag-item {
+      display: inline-block;
+      margin: 5px;
+      @include radius(1px);
+      cursor: pointer;
+      transition: all .2s;
+      &:hover {
+        background-color: map-get($colors, 'olive') !important;
+      }
+      &:hover .name, &:hover i {
+        color: map-get($colors, 'white');
+      }
+      .name {
+        vertical-align: 1px;
+      }
     }
   }
 }

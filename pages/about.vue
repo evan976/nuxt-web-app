@@ -1,5 +1,5 @@
 <template>
-  <div class="about-page">
+  <div class="about-page bg-white">
     about me
   </div>
 </template>
@@ -11,5 +11,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.about-page {
+  width: 100%;
+  height: 400px;
+  line-height: 400px;
+  text-align: center;
+}
 </style>
