@@ -1,12 +1,20 @@
 <template>
   <div class="article-detail">
-    article-detail
+    <Thumb />
+    <ArticleDetail />
   </div>
 </template>
 
 <script>
+import Thumb from '@/components/Thumb'
+import ArticleDetail from '@/components/ArticleDetail'
+
 export default {
-  name: 'ArticlePage'
+  name: 'ArticlePage',
+  components: {
+    Thumb,
+    ArticleDetail
+  }
 }
 </script>
 
