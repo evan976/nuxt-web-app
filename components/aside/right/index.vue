@@ -1,23 +1,23 @@
 <template>
   <div class="main-right">
     <Search />
-    <HotArticle />
+    <HotArticleList />
     <Advertising />
     <TagList />
   </div>
 </template>
 
 <script>
-import Search from '@/components/Search'
-import HotArticle from '@/components/HotArticle'
-import Advertising from '@/components/Advertising'
-import TagList from '@/components/TagList'
+import Search from './search'
+import Advertising from './ad'
+import TagList from './tag'
+import HotArticleList from '@/components/article/hot'
 
 export default {
   name: 'MainRight',
   components: {
     Search,
-    HotArticle,
+    HotArticleList,
     Advertising,
     TagList
   }

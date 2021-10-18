@@ -3,31 +3,38 @@
     <Header />
     <div class="section-middle">
       <div class="main-width">
-        <LeftSide />
+        <Aside :category="category" />
         <Nuxt class="center-content" />
         <RightSide />
       </div>
     </div>
     <Footer />
-    <BackTop />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
-import LeftSide from '@/components/LeftSide'
-import RightSide from '@/components/RightSide'
-import Footer from '@/components/Footer'
-import BackTop from '@/components/BackTop'
+import Header from '@/components/common/header'
+import Aside from '@/components/aside/menu'
+import RightSide from '@/components/aside/right'
+import Footer from '@/components/common/footer'
 
 export default {
   name: 'Layout',
   components: {
     Header,
-    LeftSide,
+    Aside,
     RightSide,
-    Footer,
-    BackTop
+    Footer
+  },
+
+  asyncData ({ store }) {
+    return store.dispatch('category/fetchList')
+  },
+
+  computed: {
+    category () {
+      return this.$store.state.category.data
+    }
   }
 }
 </script>

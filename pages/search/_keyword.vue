@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Swiper from '@/components/Swiper'
-import ArticleList from '@/components/ArticleList'
+import Swiper from '@/components/common/swiper'
+import ArticleList from '@/components/article/list'
 
 export default {
   name: 'SearchPage',

@@ -1,31 +1,22 @@
 <template>
-  <div class="app-aside bg-white">
-    <div class="category-wrapper py-s">
+  <div class="app-aside">
+    <div class="category-wrapper bg-white py-s mb-s">
       <nuxt-link class="m-s px-s menu-item" to="/">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-home" />
         </svg>
         <span>Home</span>
       </nuxt-link>
-      <nuxt-link class="m-s px-s menu-item" to="/category/vue">
+      <nuxt-link
+        v-for="category in categories"
+        :key="category._id"
+        class="m-s px-s menu-item"
+        :to="`/category/${category.slug}`"
+      >
         <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-vue" />
+          <use :xlink:href="`#${category.extend[0].value}`" />
         </svg>
-        <span>Vue</span>
-        <i class="iconfont icon-right" />
-      </nuxt-link>
-      <nuxt-link class="m-s px-s menu-item" to="/category/react">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-react" />
-        </svg>
-        <span>React</span>
-        <i class="iconfont icon-right" />
-      </nuxt-link>
-      <nuxt-link class="m-s px-s menu-item" to="/category/node">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-nodejs" />
-        </svg>
-        <span>Node</span>
+        <span>{{ category.name }}</span>
         <i class="iconfont icon-right" />
       </nuxt-link>
       <a class="m-s px-s menu-item" target="_blank" href="https://github.com/wujihua118">
@@ -43,23 +34,33 @@
         <i class="iconfont icon-right" />
       </nuxt-link>
     </div>
+    <Advertising />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import Advertising from './right/ad'
+
 export default {
-  name: 'AppAside'
+  name: 'Aside',
+  components: {
+    Advertising
+  },
+  computed: {
+    ...mapState({
+      categories: state => state.category.data
+    })
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .app-aside {
   width: 190px;
-  height: auto;
   margin-right: 10px;
-  float: left;
-  @include radius;
   .category-wrapper {
+    @include radius;
     .menu-item {
       font-size: 14px;
       height: 35px;

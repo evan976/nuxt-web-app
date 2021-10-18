@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Thumb from '@/components/Thumb'
-import ArticleDetail from '@/components/ArticleDetail'
+import Thumb from '@/components/common/thumb'
+import ArticleDetail from '@/components/article/item'
 
 export default {
   name: 'ArticlePage',
@@ -18,6 +18,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
