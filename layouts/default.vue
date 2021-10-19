@@ -3,7 +3,7 @@
     <Header />
     <div class="section-middle">
       <div class="main-width">
-        <Aside :category="category" />
+        <Aside />
         <Nuxt class="center-content" />
         <RightSide />
       </div>
@@ -25,16 +25,6 @@ export default {
     Aside,
     RightSide,
     Footer
-  },
-
-  asyncData ({ store }) {
-    return store.dispatch('category/fetchList')
-  },
-
-  computed: {
-    category () {
-      return this.$store.state.category.data
-    }
   }
 }
 </script>

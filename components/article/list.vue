@@ -7,7 +7,7 @@
         class="article-item py-s"
       >
         <div class="article-thumb">
-          <a href="/">
+          <a @click="toDetail(item)">
             <img :src="item.thumb">
           </a>
         </div>
@@ -21,7 +21,7 @@
           <div class="others">
             <div class="created-time">
               <i class="iconfont icon-date text-grey" />
-              <span class="text-grey">{{ item.created_at }}</span>
+              <span class="text-grey">{{ item.created_at | dateFormat() }}</span>
             </div>
             <div class="views mx-md">
               <i class="iconfont icon-eye text-grey" />

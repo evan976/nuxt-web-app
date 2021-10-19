@@ -18,6 +18,11 @@ export default {
     ]
   },
 
+  loading: {
+    color: '#0081ff',
+    height: '2px'
+  },
+
   css: [
     '@/styles/initial.scss',
     '@/static/iconfont/iconfont.css',
@@ -26,7 +31,8 @@ export default {
 
   plugins: [
     { src: '@/static/iconfont/iconfont.js', ssr: false },
-    { src: '@/plugins/vue-awesome-swiper.js', ssr: false }
+    { src: '@/plugins/vue-awesome-swiper.js', ssr: false },
+    { src: '@/plugins/filters.js', ssr: true }
   ],
 
   components: true,

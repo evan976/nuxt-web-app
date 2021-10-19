@@ -52,7 +52,7 @@ input::placeholder {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: map-get($colors, 'blue');
+  background: map-get($colors, 'grey');
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: map-get($colors, 'red');

@@ -19,13 +19,16 @@ export default {
     return {
       dataImage: [
         {
-          imgUrl: require('@/assets/images/article_thumb.png')
+          imgUrl: require('@/assets/images/slider_01.png')
         },
         {
-          imgUrl: require('@/assets/images/article_thumb.png')
+          imgUrl: require('@/assets/images/slider_02.png')
         },
         {
-          imgUrl: require('@/assets/images/article_thumb.png')
+          imgUrl: require('@/assets/images/slider_03.png')
+        },
+        {
+          imgUrl: require('@/assets/images/slider_04.png')
         }
       ],
       swiperOption: {
