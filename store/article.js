@@ -34,7 +34,7 @@ export const actions = {
   },
 
   async fetchDetail ({ commit }, id) {
-    const { data } = await request.get(`articles/${id}`)
-    commit('updateDetailData', data)
+    const { result } = await request.get(`articles/${id}`)
+    commit('updateDetailData', result)
   }
 }

@@ -32,7 +32,9 @@ export default {
   plugins: [
     { src: '@/static/iconfont/iconfont.js', ssr: false },
     { src: '@/plugins/vue-awesome-swiper.js', ssr: false },
-    { src: '@/plugins/filters.js', ssr: true }
+    { src: '@/plugins/filters.js', ssr: true },
+    { src: '@/plugins/highlight', ssr: true },
+    { src: '@/plugins/markdown', ssr: true }
   ],
 
   components: true,
@@ -55,5 +57,16 @@ export default {
 
   axios: {},
 
-  build: {}
+  build: {
+    extend (config, ctx) {
+      if (ctx.dev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  }
 }

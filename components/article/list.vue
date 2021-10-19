@@ -70,6 +70,7 @@ export default {
       border: 1px dashed map-get($colors, 'gray');
       @include radius;
       transition: all .3s;
+      cursor: pointer;
       img {
         width: 100%;
         height: 100%;
