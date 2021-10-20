@@ -2,8 +2,8 @@
   <div class="timeline-page bg-white">
     <div class="timeline-body p-md">
       <ul>
-        <li v-for="article in articles" :key="article._id">
-          <div class="bullet bg-purple" />
+        <li v-for="article in aritcleList" :key="article._id">
+          <div class="bullet bg-green" />
           <div class="time fs-md text-grey mx-md">
             {{ article.created_at | dateFormat('YYYY/MM/DD') }}
           </div>
@@ -20,15 +20,19 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { getArticleList } from '@/service/api'
 
 export default {
   name: 'TimelinePage',
+  data () {
+    return {
+      aritcleList: []
+    }
+  },
 
-  computed: {
-    ...mapState({
-      articles: state => state.article.list.data
-    })
+  async fetch () {
+    const { result: { data } } = await getArticleList()
+    this.aritcleList = data
   }
 }
 </script>
