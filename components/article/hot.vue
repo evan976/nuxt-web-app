@@ -6,17 +6,14 @@
     </div>
     <div class="hot-body p-s">
       <ul class="article-list">
-        <li class="article-item fs-md text-black">
-          <span class="index bg-olive text-center text-white">1</span>
-          <span class="title">文章标题</span>
-        </li>
-        <li class="article-item fs-md text-black">
-          <span class="index bg-purple text-center text-white">2</span>
-          <span class="title">文章标题</span>
-        </li>
-        <li class="article-item fs-md text-black">
-          <span class="index bg-red text-center text-white">3</span>
-          <span class="title">文章标题</span>
+        <li
+          v-for="(hot, index) in hotArticle"
+          :key="hot._id"
+          class="article-item fs-md text-dark"
+          @click="$router.push(`/article/${hot.id}`)"
+        >
+          <span class="index bg-red text-center text-white">{{ index + 1 }}</span>
+          <span class="title">{{ hot.title }}</span>
         </li>
       </ul>
     </div>
@@ -24,8 +21,26 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'HotArticle'
+  name: 'HotArticle',
+
+  created () {
+    this.fetchHotArticleList()
+  },
+
+  computed: {
+    ...mapState({
+      hotArticle: state => state.article.hot
+    })
+  },
+
+  methods: {
+    fetchHotArticleList () {
+      this.$store.dispatch('article/fetchHotList')
+    }
+  }
 }
 </script>
 

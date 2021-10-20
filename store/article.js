@@ -34,6 +34,11 @@ export const actions = {
     commit('updateListData', result)
   },
 
+  async fetchHotList ({ commit }) {
+    const { result: { data } } = await getArticleList({ hot: true })
+    commit('updateHotListData', data)
+  },
+
   async fetchDetail ({ commit }, id) {
     const { result } = await getArticleDetail(id)
     commit('updateDetailData', result)

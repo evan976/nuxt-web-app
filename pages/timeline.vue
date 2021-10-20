@@ -2,15 +2,17 @@
   <div class="timeline-page bg-white">
     <div class="timeline-body p-md">
       <ul>
-        <li>
+        <li v-for="article in articles" :key="article._id">
           <div class="bullet bg-purple" />
-          <div class="time fs-md text-grey mx-md">2021.10.20</div>
-          <div class="title fs-lg text-dark">文章标题</div>
-        </li>
-        <li>
-          <div class="bullet bg-purple" />
-          <div class="time fs-md text-grey mx-md">2021.10.20</div>
-          <div class="title fs-lg text-dark">文章标题</div>
+          <div class="time fs-md text-grey mx-md">
+            {{ article.created_at | dateFormat('YYYY/MM/DD') }}
+          </div>
+          <div
+            class="title fs-lg text-dark"
+            @click="$router.push(`/article/${article.id}`)"
+          >
+            {{ article.title }}
+          </div>
         </li>
       </ul>
     </div>
@@ -18,8 +20,16 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'TimelinePage'
+  name: 'TimelinePage',
+
+  computed: {
+    ...mapState({
+      articles: state => state.article.list.data
+    })
+  }
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="article-detail bg-white p-md">
+  <div class="article-detail bg-white p-md mb-s">
     <div class="origin" />
     <h1 class="article-title text-black">
       {{ article.title }}

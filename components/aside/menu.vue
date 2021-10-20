@@ -5,7 +5,7 @@
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-home" />
         </svg>
-        <span>Home</span>
+        <span>首页</span>
       </nuxt-link>
       <nuxt-link
         v-for="category in categories"
@@ -26,11 +26,18 @@
         <span>GitHub</span>
         <i class="iconfont icon-right" />
       </a>
+      <nuxt-link class="m-s px-s menu-item" to="/timeline">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-timeline" />
+        </svg>
+        <span>时间轴</span>
+        <i class="iconfont icon-right" />
+      </nuxt-link>
       <nuxt-link class="m-s px-s menu-item" to="/about">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-about" />
         </svg>
-        <span>About</span>
+        <span>关于</span>
         <i class="iconfont icon-right" />
       </nuxt-link>
     </div>
