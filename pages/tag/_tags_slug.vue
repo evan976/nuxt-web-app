@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Thumb from '@/components/common/thumb'
 import ArticleList from '@/components/article/list'
 
@@ -27,9 +28,9 @@ export default {
   },
 
   computed: {
-    article () {
-      return this.$store.state.article.list
-    },
+    ...mapState({
+      article: state => state.article.list
+    }),
     currentTag () {
       return this.$store.state.tag.data.find(
         tag => tag.slug === this.$route.params.tags_slug
@@ -42,10 +43,5 @@ export default {
       this.$router.back()
     }
   }
-
 }
 </script>
-
-<style>
-
-</style>

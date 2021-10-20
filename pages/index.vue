@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Swiper from '@/components/common/swiper'
 import ArticleList from '@/components/article/list'
 
@@ -21,12 +22,9 @@ export default {
   },
 
   computed: {
-    article () {
-      return this.$store.state.article.list
-    }
+    ...mapState({
+      article: state => state.article.list
+    })
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

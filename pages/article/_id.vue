@@ -1,5 +1,5 @@
 <template>
-  <div class="article-detail">
+  <div class="article-page">
     <ArticleDetail :article="article" />
   </div>
 </template>

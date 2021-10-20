@@ -1,4 +1,4 @@
-import request from '@/service'
+import { getTagList } from '@/service/api'
 
 export const state = () => {
   return {
@@ -14,7 +14,7 @@ export const mutations = {
 
 export const actions = {
   async fetchList ({ commit }, params = {}) {
-    const { result } = await request.get('tags', { params })
+    const { result } = await getTagList(params)
     commit('updateListData', result)
   }
 }

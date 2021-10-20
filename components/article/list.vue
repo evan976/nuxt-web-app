@@ -2,7 +2,7 @@
   <div class="article-wrapper">
     <div class="article-list bg-white my-s p-s">
       <div
-        v-for="item in article.data.data"
+        v-for="item in article.data"
         :key="item._id"
         class="article-item py-s"
       >
@@ -34,17 +34,22 @@
           </div>
         </div>
       </div>
+      <Empty v-if="!article.data.length" />
     </div>
   </div>
 </template>
 
 <script>
+import Empty from '@/components/common/empty'
 export default {
   name: 'ArticleList',
+  components: {
+    Empty
+  },
   props: {
     article: {
       type: Object,
-      required: true
+      default: () => {}
     }
   },
   methods: {

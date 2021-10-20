@@ -1,11 +1,12 @@
 <template>
   <div class="search-page">
     <Swiper />
-    <ArticleList />
+    <ArticleList :article="article" />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Swiper from '@/components/common/swiper'
 import ArticleList from '@/components/article/list'
 
@@ -14,9 +15,11 @@ export default {
   components: {
     Swiper,
     ArticleList
+  },
+  computed: {
+    ...mapState({
+      article: state => state.article.list
+    })
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

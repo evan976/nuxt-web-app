@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Thumb from '@/components/common/thumb'
 import ArticleList from '@/components/article/list'
 
@@ -27,9 +28,9 @@ export default {
   },
 
   computed: {
-    article () {
-      return this.$store.state.article.list
-    },
+    ...mapState({
+      article: state => state.article.list
+    }),
     currentCategory () {
       return this.$store.state.category.data.find(
         category => category.slug === this.$route.params.category_slug
@@ -44,6 +45,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
