@@ -36,15 +36,19 @@
       </div>
       <Empty v-if="!article.data.length" />
     </div>
+    <Pagination />
   </div>
 </template>
 
 <script>
+import Pagination from './pagination.vue'
 import Empty from '@/components/common/empty'
+
 export default {
   name: 'ArticleList',
   components: {
-    Empty
+    Empty,
+    Pagination
   },
   props: {
     article: {
@@ -104,15 +108,15 @@ export default {
     }
   }
 }
-.pagination {
-  height: 25px;
-  line-height: 25px;
-  opacity: .8;
-  @include radius;
-  cursor: pointer;
-  transition: all .2s;
-  &:hover {
-    opacity: 1;
-  }
-}
+// .pagination {
+//   height: 25px;
+//   line-height: 25px;
+//   opacity: .8;
+//   @include radius;
+//   cursor: pointer;
+//   transition: all .2s;
+//   &:hover {
+//     opacity: 1;
+//   }
+// }
 </style>
