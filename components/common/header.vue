@@ -5,6 +5,9 @@
         <a href="/">
           <img src="@/assets/images/logo.svg" alt="logo">
         </a>
+        <div class="title text-blue fs-md">
+          生之宇宙，归之殊途
+        </div>
       </div>
     </div>
   </div>
@@ -25,6 +28,14 @@ export default {
   height: 60px;
   @include box-shadow(0px 1px 4px rgba(255, 255, 255, .2));
   @include clearfix;
-  @include flex(space-between, center);
+  .logo {
+    height: 60px;
+    width: 280px;
+    display: flex;
+    @include flex(space-around, center);
+    img {
+      vertical-align: -4px;
+    }
+  }
 }
 </style>

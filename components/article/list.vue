@@ -108,15 +108,4 @@ export default {
     }
   }
 }
-// .pagination {
-//   height: 25px;
-//   line-height: 25px;
-//   opacity: .8;
-//   @include radius;
-//   cursor: pointer;
-//   transition: all .2s;
-//   &:hover {
-//     opacity: 1;
-//   }
-// }
 </style>

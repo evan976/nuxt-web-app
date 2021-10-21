@@ -6,23 +6,23 @@ const service = axios.create({
 })
 
 service.interceptors.request.use(
-  (config) => {
+  config => {
     return config
   },
-  (err) => {
+  err => {
     return Promise.reject(err)
   }
 )
 
 service.interceptors.response.use(
-  (res) => {
+  res => {
     if (res.status === 200) {
       return Promise.resolve(res.data)
     } else {
       return Promise.reject(res)
     }
   },
-  (err) => {
+  err => {
     return Promise.reject(err)
   }
 )

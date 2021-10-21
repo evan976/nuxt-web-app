@@ -1,6 +1,6 @@
 <template>
   <div class="ad-wrapper bg-white text-gray text-center mb-s">
-    广而告之
+    种一个月亮
   </div>
 </template>
 
