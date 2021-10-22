@@ -31,7 +31,7 @@ export default {
 
   plugins: [
     { src: '@/static/iconfont/iconfont.js', ssr: false },
-    { src: '@/plugins/vue-awesome-swiper.js', ssr: false },
+    { src: '@/plugins/vue-awesome-swiper.js', mode: 'client' },
     { src: '@/plugins/filters.js', ssr: true },
     { src: '@/plugins/highlight', ssr: true },
     { src: '@/plugins/markdown', ssr: true }

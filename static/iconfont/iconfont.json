@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "563555",
+      "name": "life",
+      "font_class": "life",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "7518303",
+      "name": "沙漏",
+      "font_class": "shalou",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "670887",
+      "name": "about",
+      "font_class": "me",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "1166082",
+      "name": "火箭2",
+      "font_class": "future",
+      "unicode": "e785",
+      "unicode_decimal": 59269
+    },
+    {
+      "icon_id": "7518265",
+      "name": "电脑",
+      "font_class": "compute",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
       "icon_id": "11488069",
       "name": "loading",
       "font_class": "loading",

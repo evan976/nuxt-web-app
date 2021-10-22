@@ -28,7 +28,7 @@
       </a>
       <nuxt-link class="m-s px-s menu-item" to="/timeline">
         <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-timeline" />
+          <use xlink:href="#icon-shalou" />
         </svg>
         <span>时间轴</span>
         <i class="iconfont icon-right" />
