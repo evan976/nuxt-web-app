@@ -5,8 +5,8 @@
     @mouseleave="startSwiper"
   >
     <div class="swiper-wrapper">
-      <div v-for="(item, index) in dataImage" :key="index" class="swiper-slide">
-        <img :src="item.imgUrl">
+      <div v-for="item in dataImage" :key="item._id" class="swiper-slide">
+        <img :src="item.thumb">
       </div>
     </div>
     <div slot="pagination" class="swiper-pagination" />
@@ -14,23 +14,12 @@
 </template>
 
 <script>
+import { getArticleList } from '@/service/api'
+
 export default {
   data () {
     return {
-      dataImage: [
-        {
-          imgUrl: require('@/assets/images/slider_01.png')
-        },
-        {
-          imgUrl: require('@/assets/images/slider_02.png')
-        },
-        {
-          imgUrl: require('@/assets/images/slider_03.png')
-        },
-        {
-          imgUrl: require('@/assets/images/slider_04.png')
-        }
-      ],
+      dataImage: [],
       swiperOption: {
         autoplay: {
           delay: 3000,
@@ -48,6 +37,11 @@ export default {
       }
     }
   },
+
+  created () {
+    this.loadThumb()
+  },
+
   swiper () {
     return this.$refs.swiperBox.swiper
   },
@@ -57,6 +51,10 @@ export default {
     },
     startSwiper () {
       this.swiper.autoplay.start()
+    },
+    async loadThumb () {
+      const { result: { data } } = await getArticleList({ limit: 6 })
+      this.dataImage = data
     }
   }
 }
