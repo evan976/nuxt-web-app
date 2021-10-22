@@ -1,7 +1,7 @@
 <template>
   <div class="index-page">
     <Swiper />
-    <ArticleList :article="article" />
+    <ArticleList :article="article" @loadmore="loadMore" />
   </div>
 </template>
 
@@ -17,14 +17,25 @@ export default {
     ArticleList
   },
 
-  fetch ({ store }) {
-    return store.dispatch('article/fetchList')
+  created () {
+    this.$store.dispatch('article/fetchList')
   },
 
   computed: {
     ...mapState({
       article: state => state.article.list
-    })
+    }),
+    nextPageParams () {
+      return {
+        offset: this.article.pagination.offset + 1
+      }
+    }
+  },
+
+  methods: {
+    loadMore () {
+      this.$store.dispatch('article/fetchList', this.nextPageParams)
+    }
   }
 }
 </script>

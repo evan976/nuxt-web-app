@@ -1,5 +1,5 @@
 <template>
-  <div class="ad-wrapper bg-white text-gray text-center mb-s">
+  <div class="ad-wrapper bg-white text-gray text-center my-s">
     种一个月亮
   </div>
 </template>

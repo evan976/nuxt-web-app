@@ -1,6 +1,6 @@
 import { getArticleList, getArticleDetail } from '@/service/api'
 
-const getListData = () => {
+const getDefaultListData = () => {
   return {
     data: [],
     pagination: {}
@@ -9,7 +9,7 @@ const getListData = () => {
 
 export const state = () => {
   return {
-    list: getListData(),
+    list: getDefaultListData(),
     hot: [],
     detail: {}
   }
@@ -17,7 +17,10 @@ export const state = () => {
 
 export const mutations = {
   updateListData (state, data) {
-    state.list.data = data.data
+    state.list = data
+  },
+  updateExistListData (state, data) {
+    state.list.data.push(...data.data)
     state.list.pagination = data.pagination
   },
   updateHotListData (state, data) {
@@ -29,9 +32,19 @@ export const mutations = {
 }
 
 export const actions = {
-  async fetchList ({ commit }, params = {}) {
-    const { result } = await getArticleList(params)
-    commit('updateListData', result)
+  fetchList ({ commit }, params = {}) {
+    const isRestart = !params.offset || params.offset === 1
+    const isLoadMore = params.offset && params.offset > 1
+
+    // 清空数据
+    isRestart && commit('updateListData', getDefaultListData())
+
+    getArticleList(params)
+      .then(res => {
+        isLoadMore
+          ? commit('updateExistListData', res.result)
+          : commit('updateListData', res.result)
+      })
   },
 
   async fetchHotList ({ commit }) {

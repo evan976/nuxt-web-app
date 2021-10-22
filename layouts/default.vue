@@ -14,8 +14,8 @@
 
 <script>
 import Header from '@/components/common/header'
-import Aside from '@/components/aside/menu'
-import RightSide from '@/components/aside/right'
+import Aside from '@/components/left-aside/menu'
+import RightSide from '@/components/right-aside'
 import Footer from '@/components/common/footer'
 
 export default {

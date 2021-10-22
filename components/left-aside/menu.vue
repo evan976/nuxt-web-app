@@ -47,7 +47,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import Advertising from './right/ad'
+import Advertising from '@/components/common/ad'
 
 export default {
   name: 'Aside',

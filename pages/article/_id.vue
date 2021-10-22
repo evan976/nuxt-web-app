@@ -1,6 +1,19 @@
 <template>
   <div class="article-page">
-    <ArticleDetail :article="article" />
+    <div class="article-detail bg-white p-md mb-s">
+      <div class="origin" />
+      <h1 class="article-title text-black">
+        {{ article.title }}
+      </h1>
+      <div class="article-img">
+        <a href="/">
+          <img :src="article.thumb" :alt="article.id">
+        </a>
+      </div>
+      <div class="article-content">
+        <Markdown :content="article.content" />
+      </div>
+    </div>
     <div class="article-info bg-white fs-md my-s p-md">
       <div class="base-info text-dark my-xs p-s">
         本文于
@@ -26,18 +39,19 @@
 
 <script>
 import { mapState } from 'vuex'
-import Advertising from '@/components/aside/right/ad'
-import ArticleDetail from '@/components/article/item'
+import Markdown from '@/components/article/markdown'
+import Advertising from '@/components/common/ad'
 
 export default {
   name: 'ArticlePage',
   components: {
-    Advertising,
-    ArticleDetail
+    Markdown,
+    Advertising
   },
   validate ({ params }) {
     return /^\d+$/.test(params.id)
   },
+
   fetch ({ store, params }) {
     return store.dispatch('article/fetchDetail', params.id)
   },
@@ -50,6 +64,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.article-detail {
+  width: 100%;
+  height: auto;
+  @include radius;
+  position: relative;
+  .article-title {
+    height: 64px;
+    font-weight: 500;
+    line-height: 64px;
+    font-size: 24px;
+    text-align: center;
+  }
+  .article-img {
+    height: 194px;
+    border: 4px solid map-get($colors, 'gray');
+    overflow: hidden;
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
 .article-info {
   @include radius;
   .base-info {

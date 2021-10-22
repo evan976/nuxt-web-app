@@ -1,7 +1,7 @@
 <template>
   <div class="category-page">
     <Thumb :item="currentCategory" />
-    <ArticleList :article="article" />
+    <ArticleList :article="article" @loadmore="loadMore" />
   </div>
 </template>
 
@@ -23,10 +23,6 @@ export default {
     )
   },
 
-  fetch ({ store, params }) {
-    return store.dispatch('article/fetchList', params)
-  },
-
   computed: {
     ...mapState({
       article: state => state.article.list
@@ -35,10 +31,27 @@ export default {
       return this.$store.state.category.data.find(
         category => category.slug === this.$route.params.category_slug
       )
+    },
+    defaultParams () {
+      return {
+        tags_slug: this.$route.params.tags_slug
+      }
+    },
+    nextPageParams () {
+      return Object.assign({
+        offset: this.article.pagination.offset + 1
+      }, this.defaultParams)
+    }
+  },
+
+  methods: {
+    loadMore () {
+      this.$store.dispatch('article/fetchList', this.nextPageParams)
     }
   },
 
   created () {
+    this.$store.dispatch('article/fetchList', this.$route.params)
     if (!this.currentCategory) {
       this.$router.back()
     }
