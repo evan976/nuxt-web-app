@@ -41,6 +41,19 @@ export default {
       return Object.assign({
         offset: this.article.pagination.offset + 1
       }, this.defaultParams)
+    },
+    categorySlug () {
+      return this.$route.params.category_slug
+    }
+  },
+
+  head () {
+    return {
+      title: `${this.categorySlug} | 分类`,
+      meta: [
+        { hid: 'keywords', name: 'keywords', content: `${this.categorySlug}` },
+        { hid: 'description', name: 'description', content: `${this.categorySlug}` }
+      ]
     }
   },
 

@@ -30,6 +30,16 @@ export default {
     }
   },
 
+  head () {
+    return {
+      title: 'Evan | 时间轴',
+      meta: [
+        { hid: 'keywords', name: 'keywords', content: '博客，个人网站，前端开发，vuejs，vue ssr，nodejs，nuxtjs' },
+        { hid: 'description', name: 'description', content: '开源博客，Evan的个人博客网站，基于nuxt ssr首屏服务器端渲染，用于分享、交流、记录和学习。' }
+      ]
+    }
+  },
+
   async fetch () {
     const { result: { data } } = await getArticleList()
     this.aritcleList = data

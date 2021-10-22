@@ -81,10 +81,21 @@ export default {
   fetch ({ store, params }) {
     return store.dispatch('article/fetchDetail', params.id)
   },
+
   computed: {
     ...mapState({
       article: state => state.article.detail
     })
+  },
+
+  head () {
+    return {
+      title: this.article.title,
+      meta: [
+        { hid: 'keywords', name: 'keywords', content: this.article.keywords },
+        { hid: 'description', name: 'description', content: this.article.description }
+      ]
+    }
   }
 }
 </script>

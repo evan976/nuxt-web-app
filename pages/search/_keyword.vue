@@ -35,6 +35,19 @@ export default {
       return Object.assign({
         offset: this.article.pagination.offset + 1
       }, this.defaultParams)
+    },
+    keyword () {
+      return this.$route.params.keyword
+    }
+  },
+
+  head () {
+    return {
+      title: 'Evan | 文章列表',
+      meta: [
+        { hid: 'keywords', name: 'keywords', content: `搜索 \`${this.keyword}\` 的结果` },
+        { hid: 'description', name: 'description', content: `搜索 \`${this.keyword}\` 的结果` }
+      ]
     }
   },
   methods: {
