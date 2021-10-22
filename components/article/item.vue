@@ -6,7 +6,7 @@
     </h1>
     <div class="article-img">
       <a href="/">
-        <img :src="article.thumb">
+        <img :src="article.thumb" :alt="article.id">
       </a>
     </div>
     <div class="article-content">

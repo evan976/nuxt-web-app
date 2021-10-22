@@ -29,5 +29,7 @@ export default {
   width: 256px;
   height: auto;
   margin-left: 10px;
+  position: sticky;
+  top: 80px;
 }
 </style>

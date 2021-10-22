@@ -30,7 +30,7 @@ export default {
 <style lang="scss">
 .markdown {
   h1, h2, h3, h4, h5, h6 {
-    line-height: 1.8;
+    line-height: 2.5;
     font-weight: 500;
     text-indent: 0;
     color: map-get($colors, 'black');
@@ -39,11 +39,16 @@ export default {
     line-height: 1.6;
     font-size: 14px;
     margin: 10px 0;
-    text-indent: 25px;
+    text-indent: 1.6em;
     color: map-get($colors, 'dark');
+    code {
+      padding: 0 .4em;
+      @include radius;
+      background-color: map-get($colors, 'gray');
+    }
   }
   span {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   img {
@@ -60,7 +65,10 @@ export default {
   ul, ol {
     > li {
       line-height: 1.8;
-      padding: .5em .8em;
+      padding: .4em 0;
+      margin: 0 2em;
+      font-size: 14px;
+      list-style-type: disc;
       color: map-get($colors, 'dark');
       &:hover {
         background-color: map-get($colors, 'gray');

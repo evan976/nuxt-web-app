@@ -66,6 +66,8 @@ export default {
 .app-aside {
   width: 190px;
   margin-right: 10px;
+  position: sticky;
+  top: 80px;
   .category-wrapper {
     @include radius;
     .menu-item {
