@@ -1,0 +1,6 @@
+# robots.txt
+User-agent: *
+Disallow: /bin/
+Disallow: /proxy
+Sitemap: https://evanone.site/sitemap.xml
+Sitemap: https://evanone.site/sitemap

@@ -2,13 +2,13 @@ import axios from 'axios'
 import dayjs from 'dayjs'
 
 const dateFormat = date => {
-  return dayjs(date).format('YYYY/MM/DD')
+  return dayjs(date).format('YYYY-MM-DD')
 }
 
 const sitemap = {
   path: '/sitemap.xml',
   hostname: 'http://localhost:3000',
-  cacheTime: 1000 * 60 * 60 * 6,
+  cacheTime: 1000 * 60 * 60 * 6, // 更新频率 1 天
   gzip: true, // 生成 .xml.gz 压缩的 sitemap
   generate: false, // 允许使用 nuxt generate 生成
   // 排除不要页面
@@ -25,7 +25,12 @@ const sitemap = {
   routes (callback) {
     axios.all([
       // 文章分类
-      axios.get('http://localhost:8000/api/private/v1/categories'),
+      axios.get('http://localhost:8000/api/private/v1/categories', {
+        params: {
+          offset: 1,
+          limit: 200
+        }
+      }),
       // 所有文章
       axios.get('http://localhost:8000/api/private/v1/articles', {
         params: {
@@ -43,7 +48,7 @@ const sitemap = {
           url: '/',
           changefreq: 'daily',
           priority: 1,
-          lastmodISO: dateFormat(now)
+          lastmod: dateFormat(now)
         }
       ]
       let categoryRoutes = category.data.result.data.map(data => {
@@ -51,7 +56,7 @@ const sitemap = {
           url: `/category/${data.slug}`,
           changefreq: 'monthly',
           priority: 0.8,
-          lastmodISO: dateFormat(data.updated_at)
+          lastmod: dateFormat(data.updated_at)
         }
       })
       let articleRoutes = article.data.result.data.map(data => {
@@ -59,7 +64,7 @@ const sitemap = {
           url: `/article/${data.id}`,
           changefreq: 'daily',
           priority: 0.9,
-          lastmodISO: dateFormat(data.updated_at)
+          lastmod: dateFormat(data.updated_at)
         }
       })
       let tagsRoutes = tag.data.result.map(data => {
@@ -67,7 +72,7 @@ const sitemap = {
           url: `/tag/${data.slug}`,
           changefreq: 'weekly',
           priority: 0.7,
-          lastmodISO: dateFormat(data.updated_at)
+          lastmod: dateFormat(data.updated_at)
         }
       })
       //  用concat进行数据合并

@@ -21,17 +21,21 @@
                 {{ item.description }}
               </p>
               <div class="others">
-                <div class="created-time">
+                <div class="created-time mr-xl">
                   <i class="iconfont icon-date text-grey" />
                   <span class="text-grey">{{ item.created_at | dateFormat() }}</span>
                 </div>
-                <div class="views mx-md">
+                <div class="views mr-xl">
                   <i class="iconfont icon-eye text-grey" />
                   <span class="text-grey">{{ item.meta.views }}</span>
                 </div>
-                <div class="category">
+                <div class="category mr-xl">
                   <i class="iconfont icon-category text-grey" />
                   <span class="text-grey">{{ item.category.name }}</span>
+                </div>
+                <div class="category">
+                  <i class="iconfont icon-tags text-grey" />
+                  <span class="text-grey">{{ item.tags.length }}</span>
                 </div>
               </div>
             </div>

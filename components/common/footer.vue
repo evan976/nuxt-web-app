@@ -1,15 +1,17 @@
 <template>
   <div class="layout-footer bg-white fs-md">
-    <a class="copyright fs-md text-black" href="https://beian.miit.gov.cn">
+    <span>&copy; 2021</span>
+    <span class="mx-s">|</span>
+    <a class="copyright fs-md text-black" target="_blank" href="https://beian.miit.gov.cn">
       滇ICP备20006236号
     </a>
     <span class="mx-s">|</span>
     <span class="fs-md text-black">
-      <a class="text-green" href="https://nuxtjs.org/">NUXT </a>和
-      <a class="text-green" href="https://cn.vuejs.org/">VUE </a>强力驱动
+      <a class="text-green" target="_blank" href="https://nuxtjs.org/">NUXT </a>和
+      <a class="text-green" target="_blank" href="https://cn.vuejs.org/">VUE </a>强力驱动
     </span>
     <span class="mx-s">|</span>
-    <a class="link text-black" href="https://github.com/wujihua118">耕云种月</a>
+    <a class="link text-black" target="_blank" href="/sitemap.xml">耕云种月</a>
   </div>
 </template>
 

@@ -1,28 +1,30 @@
-import sitemap from './config/sitemap'
+import sitemap from './config/sitemap.config'
+import { meta, baiduKey } from './config/app.config'
 
 export default {
 
   mode: 'universal',
 
   head: {
-    title: 'Evan | 欢迎来到Evan个人博客',
+    title: `${meta.title} | ${meta.subTitle}`,
+    titleTemplate: '%s - evanone.site',
     htmlAttrs: {
       xmlns: 'http://www.w3.org/1999/xhtml',
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'author', content: 'wjh50940@163.com' },
+      { name: 'author', content: `${meta.author}` },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' },
-      { hid: 'keywords', name: 'keywords', content: '博客，个人网站，前端开发，vuejs，vue ssr，nodejs，nuxtjs' },
-      { hid: 'description', name: 'description', content: '开源博客，Evan的个人博客网站，基于nuxt ssr首屏服务器端渲染，用于分享、交流、记录和学习。' },
+      { hid: 'keywords', name: 'keywords', content: `${meta.keywords}` },
+      { hid: 'description', name: 'description', content: `${meta.description}` },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://hm.baidu.com/hm.js?793275cef10f8820022797165b499d8e' }
+      { src: `https://hm.baidu.com/hm.js?${baiduKey}` }
     ]
   },
 
@@ -68,8 +70,6 @@ export default {
   ],
 
   sitemap,
-
-  axios: {},
 
   build: {
     extend (config, ctx) {

@@ -12,7 +12,12 @@
           class="article-item fs-md text-dark"
           @click="$router.push(`/article/${hot.id}`)"
         >
-          <span class="index bg-red text-center text-white">{{ index + 1 }}</span>
+          <span
+            class="index text-center text-white"
+            :class="index + 1 === 1 ? 'bg-red' : (index + 1 === 2 ? 'bg-orange' : (index + 1 === 3 ? 'bg-green' : 'bg-gray'))"
+          >
+            {{ index + 1 }}
+          </span>
           <span class="title">{{ hot.title }}</span>
         </li>
       </ul>
