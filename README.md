@@ -6,7 +6,7 @@
 
 后台管理，[在这](https://github.com/wujihua118/vue-admin-client)
 
-[准备上线地址](https://evanone.site)
+[访问地址](https://evanone.site)
 
 ## 实现功能
 
