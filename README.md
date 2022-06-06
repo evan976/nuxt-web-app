@@ -1,6 +1,6 @@
 # nuxt-web-app
 
-# 正在重构（nuxt3 + typescript + vite）
+# 已废弃
 
 个人博客网站，使用 [Nuxtjs](https://nuxtjs.org/) 构建，基本完成，细节待完善
 
